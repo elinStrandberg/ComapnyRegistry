@@ -9,14 +9,20 @@ namespace CompanyRegristry.Controllers
 {
     public class CompaniesController : Controller
     {
-        //GET: Companies/Test
-        public IActionResult Test()
-        {
-            var company = new Company()
-            {
-                Name = "Tromb"
-            };
-            return View(company);
-        }
+        //CompaniesService service;
+
+        //public CompaniesController(CompaniesService service)
+        //{
+        //    this.service = service;
+        //}
+
+        ////GET: Home
+        ////Lägg till funktionalitet för att lista företag och kontaktpersoner
+        //public IActionResult Index()
+        //{
+        //    return View(service.GetAll());
+        //}
+
+
     }
 }

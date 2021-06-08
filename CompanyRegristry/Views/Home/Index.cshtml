@@ -1,4 +1,5 @@
-﻿@model CompanyRegristry.Models.Company
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model CompanyRegristry.Models.Company[]
 @{
     ViewData["Title"] = "Home";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,4 +9,16 @@
 
 
 <p>Sida för att lista företag och kontaktpersoner</p>
+
+@*<h2>Lista på företag (@Model.Length)</h2>
+<ul>
+    @foreach (var item in Model)
+    {
+    <li>
+        @item.Name
+    </li>
+
+    }
+</ul>*@
+
 

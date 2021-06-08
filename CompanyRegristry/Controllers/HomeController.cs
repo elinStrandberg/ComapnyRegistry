@@ -10,6 +10,8 @@ namespace CompanyRegristry.Controllers
 {
     public class HomeController : Controller
     {
+
+
         //GET: Home
         //Lägg till funktionalitet för att lista företag och kontaktpersoner
         public IActionResult Index()
@@ -23,7 +25,9 @@ namespace CompanyRegristry.Controllers
         {
             ViewData["Message"] = "Your application description page.";
 
-            return View();
+            var company = new Company() { Name = "Tromb" };
+
+            return View(company);
         }
 
         //GET: Home/Contact
