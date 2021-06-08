@@ -14,9 +14,23 @@ namespace CompanyRegristry.Controllers
 
         //GET: Home
         //Lägg till funktionalitet för att lista företag och kontaktpersoner
+        //public IActionResult Index()
+        //{
+        //    return View();
+        //}
+
+        CompaniesService service = new CompaniesService();
+
+        public HomeController(CompaniesService service)
+        {
+            this.service = service;
+        }
+
+        //GET: Home
+        //Lägg till funktionalitet för att lista företag och kontaktpersoner
         public IActionResult Index()
         {
-            return View();
+            return View(service.GetAllCompanies());
         }
 
         //GET: Home/Company
