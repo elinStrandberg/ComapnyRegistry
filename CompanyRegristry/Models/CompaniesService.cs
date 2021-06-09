@@ -8,12 +8,12 @@ namespace CompanyRegristry.Models
 {
     public class CompaniesService
     {
-        //static int idCounter = 3;
+        
         List<Company> companies = new List<Company>()
         {
-            new Company { Id = 1, Name = "Tromb"},
-            new Company { Id = 2, Name = "TietoEVRY" },
-            new Company { Id = 3, Name = "Future Ltd" }
+            new Company { Id = 1, Name = "Tromb", Address = "Vägen 123", Contactperson = "Kalle" },
+            new Company { Id = 2, Name = "TietoEVRY", Address = "Gatan 123", Contactperson = "Lisa" },
+            new Company { Id = 3, Name = "Future Ltd", Address = "Street 123", Contactperson = "Kim" }
         };
 
         public CompaniesIndexVM[] GetAllCompanies()
@@ -23,10 +23,16 @@ namespace CompanyRegristry.Models
                 .ToArray();
         }
 
-        //internal void Add(Company company)
-        //{
-        //    company.Id = ++idCounter;
-        //    companies.Add(company);
-        //}
+        public CompaniesContactsVM GetContactPersons(int id)
+        {
+            return companies
+                .Where(c => c.Id == id)
+                .Select(c => new CompaniesContactsVM
+                {
+                    ContactName = c.Contactperson
+
+                })
+                .Single();
+        }
     }
 }

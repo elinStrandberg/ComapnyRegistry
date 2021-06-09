@@ -33,6 +33,13 @@ namespace CompanyRegristry.Controllers
             return View(service.GetAllCompanies());
         }
 
+        //GET: Home/CompanyContact/id
+        [Route("home/companycontact/{id}")]
+        public IActionResult CompanyContact(int id)
+        {
+            return View(service.GetContactPersons(id));
+        }
+
         //GET: Home/Company
         //Lägg till funktionalitet för att skapa/redigera/tabort
         public IActionResult Company()
