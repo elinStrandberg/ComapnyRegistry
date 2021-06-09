@@ -12,13 +12,6 @@ namespace CompanyRegristry.Controllers
     {
 
 
-        //GET: Home
-        //Lägg till funktionalitet för att lista företag och kontaktpersoner
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
-
         CompaniesService service = new CompaniesService();
 
         public HomeController(CompaniesService service)
@@ -42,14 +35,7 @@ namespace CompanyRegristry.Controllers
 
         //GET: Home/Company
         //Lägg till funktionalitet för att skapa/redigera/tabort
-        public IActionResult Company()
-        {
-            ViewData["Message"] = "Your application description page.";
 
-            var company = new Company() { Name = "Tromb" };
-
-            return View(company);
-        }
 
         //GET: Home/Contact
         //Lägg till funktionalitet för att skapa/redigera/tabort kontaktperson
@@ -62,7 +48,7 @@ namespace CompanyRegristry.Controllers
 
         //GET: Home/Privacy
         //Lägg till funktionalitet för att söka fram företag och kontaktpersoner
-        public IActionResult Privacy()
+        public IActionResult Search()
         {
             return View();
         }

@@ -1,0 +1,28 @@
+﻿@model CompanyRegristry.Models.ViewModels.CompaniesCreateVM
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Lägg till företag</h2>
+<form asp-controller="companies" asp-action="create">
+    <label asp-for="Name"></label>
+    <input asp-for="Name" />
+    <span asp-validation-for="Name"></span> <br />
+
+    <label asp-for="Address"></label>
+    <input asp-for="Address" />
+
+
+    <label asp-for="ContactPerson"></label>
+    <input asp-for="ContactPerson" />
+
+
+    <br />
+    <input type="submit" value="Lägg till företag" />
+
+</form>
+
+<a asp-controller="companies" asp-action="company">Tillbaka</a>
+

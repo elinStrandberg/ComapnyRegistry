@@ -34,5 +34,15 @@ namespace CompanyRegristry.Models
                 })
                 .Single();
         }
+
+        public void AddCompanies(CompaniesCreateVM company)
+        {
+            companies.Add(new Company
+            {
+                Id = company.Id,
+                Name = company.Name,
+                Address = company.Address
+            });
+        }
     }
 }
